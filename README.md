@@ -1,5 +1,5 @@
 <a href="https://melvin.ai.studio/">
-  <img src="assets/coast.gif" alt="Melvin. An illustrated North Sea landscape in motion." width="100%" />
+  <img src="assets/coast-melvin.gif" alt="Melvin. An illustrated North Sea landscape in motion." width="100%" />
 </a>
 
 I'm a management student at the University of Mannheim. I like figuring out how businesses work and building things with AI.
