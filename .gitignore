@@ -1,0 +1,5 @@
+.tooling/
+artifacts/
+motion/node_modules/
+motion/out/
+.DS_Store
