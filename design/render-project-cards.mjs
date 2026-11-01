@@ -9,11 +9,11 @@ const root = resolve(here, '..');
 const font = async (f) => (await readFile(resolve(root, 'motion/public/assets', f))).toString('base64');
 const [serif, sans] = await Promise.all([font('newsreader.woff2'), font('dm-sans.woff2')]);
 const cards = [
-  {id:'procuraiq', title:'ProcuraIQ', desc:'Ingredient analysis<br>and supplier comparisons.', source:'procuraiq.png'},
+  {id:'procuraiq', title:'ProcuraIQ', desc:'Ingredient analysis<br>and supplier comparisons.', source:'procuraiq-pitch.png', fit:'contain', bg:'#000000'},
   {id:'contextual-writing', title:'Contextual<br>Writing', desc:'Writing workflows for<br>Claude and Codex.', source:'contextual.png', pos:'left center'},
   {id:'fjord-fleet', title:'Fjord Fleet<br>Pricing', desc:'A university analytics<br>case on fleet pricing.', source:'fjord.png', fit:'contain', bg:'#ffffff'},
   {id:'strikesignal', title:'StrikeSignal', desc:'Counter-Strike predictions<br>and analysis.', status:'Unfinished. On hold.', source:'strikesignal.jpg', pos:'left top'},
-  {id:'personal-website', title:'Personal<br>website', desc:'More about my background,<br>interests and work.', source:'personal.png', fit:'contain', bg:'#121a16'},
+  {id:'personal-website', title:'Personal<br>website', desc:'More about my background,<br>interests and work.', source:'personal-gull.png', fit:'contain', bg:'#121a16'},
   {id:'margin', title:'Margin', desc:'A workspace for CVs,<br>cover letters and applications.', status:'In development.', source:'margin.png', fit:'contain', bg:'#efe9d9'},
   {id:'relay', title:'Relay', desc:'Skills and integrations<br>for AI tools.', status:'In development.', source:'relay.png', fit:'contain', bg:'#000000'},
 ];
