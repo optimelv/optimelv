@@ -1,5 +1,5 @@
 <a href="https://melvin.ai.studio/">
-  <img src="assets/coast.gif" alt="Melvin Friedrichsen. An illustrated North Sea landscape in motion." width="100%" />
+  <img src="assets/coast.gif" alt="Melvin. An illustrated North Sea landscape in motion." width="100%" />
 </a>
 
 I'm a management student at the University of Mannheim. I like figuring out how businesses work and building things with AI.
@@ -8,31 +8,15 @@ I'm a management student at the University of Mannheim. I like figuring out how 
 
 ## Projects
 
-[**ProcuraIQ**](https://github.com/mferuscomelo/procura-iq)  
-AI-assisted ingredient analysis and supplier comparisons.
-
-[**Contextual Writing**](https://github.com/optimelv/contextual-writing-skill)  
-German and English writing workflows for Claude and Codex.
-
-[**Fjord Fleet Pricing**](https://fjord-fleet-pricing.vercel.app/)  
-An interactive pricing and analytics case for fleet vehicles. [View the code](https://github.com/optimelv/fjord-fleet-pricing).
-
-[**StrikeSignal**](https://melvin.ai.studio/projects/strikesignal)  
-Counter-Strike match predictions and analysis. Unfinished, with development currently on hold. [View the code](https://github.com/optimelv/cs2-predictor).
-
-[**Personal website**](https://melvin.ai.studio/)  
-More about my background, interests and work.
+<a href="https://github.com/mferuscomelo/procura-iq"><img src="assets/projects/procuraiq.png" alt="ProcuraIQ: ingredient analysis and supplier comparisons. Screenshot of the application's start screen." width="100%" /></a>
+<a href="https://github.com/optimelv/contextual-writing-skill"><img src="assets/projects/contextual-writing.png" alt="Contextual Writing: writing workflows for Claude and Codex. A visual overview of the workflow." width="100%" /></a>
+<a href="https://github.com/optimelv/fjord-fleet-pricing"><img src="assets/projects/fjord-fleet.png" alt="Fjord Fleet Pricing: a university analytics case on fleet pricing. The image shows a chart from the simulation." width="100%" /></a>
+<a href="https://github.com/optimelv/cs2-predictor"><img src="assets/projects/strikesignal.png" alt="StrikeSignal: Counter-Strike predictions and analysis. Unfinished, with development on hold. Screenshot captured in October 2026." width="100%" /></a>
+<a href="https://melvin.ai.studio/"><img src="assets/projects/personal-website.png" alt="Personal website: more about my background, interests and work." width="100%" /></a>
 
 ## In the works
 
-Two projects in development. The images link to animated, illustrated previews.
+These projects are in development. Select an image to see its animated, illustrated preview.
 
-[**Margin**](https://melvin.ai.studio/in-the-works#margin)  
-A workspace for CVs, cover letters and application documents.
-
-<a href="https://melvin.ai.studio/in-the-works#margin"><img src="assets/margin-preview.png" alt="Illustrated preview of Margin's CV editor" width="100%" /></a>
-
-[**Relay**](https://melvin.ai.studio/in-the-works#relay)  
-A desktop hub for managing skills and integrations across AI tools.
-
-<a href="https://melvin.ai.studio/in-the-works#relay"><img src="assets/relay-preview.png" alt="Illustrated preview of Relay's skill discovery" width="100%" /></a>
+<a href="https://melvin.ai.studio/in-the-works#margin"><img src="assets/projects/margin.png" alt="Margin: a workspace for CVs, cover letters and application documents. In development; illustrated preview uses fictional data." width="100%" /></a>
+<a href="https://melvin.ai.studio/in-the-works#relay"><img src="assets/projects/relay.png" alt="Relay: skills and integrations for AI tools. In development; illustrated preview." width="100%" /></a>

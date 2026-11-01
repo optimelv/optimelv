@@ -10,9 +10,9 @@ Cinetic draw, seed 3495620418: `ui-lens-list-scroll` dropped because there is no
 
 | bar | time | picture | copy |
 | --- | --- | --- | --- |
-| 1 | 0–2s | Coast already visible; moving water and wing | Melvin Friedrichsen |
+| 1 | 0–2s | Coast already visible; moving water and wing | Melvin |
 | 2 | 2–4s | Phrase settles over the landscape | Building with AI |
 | 3 | 4–6s | Water and gull continue independently | Building with AI |
-| 4 | 6–8s | Phrase clears; coast returns to opening pose | Melvin Friedrichsen |
+| 4 | 6–8s | Phrase clears; coast returns to opening pose | Melvin |
 
-Copy: five words. No sound. The full continuous coast and name are the opening and closing frame.
+Copy: four words. No sound. The full continuous coast and name are the opening and closing frame.

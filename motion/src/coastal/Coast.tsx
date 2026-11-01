@@ -4,7 +4,7 @@ import { TextReveal } from '../vendor/snapcn/TextReveal';
 import { FPS, H, TOTAL, W } from './timeline';
 
 // cinetic:brand-supplied warm ivory, North Sea greens and Newsreader from the portfolio.
-const ink = '#24372c';
+const ink = '#eef1e8';
 const fonts = `@font-face {font-family:Newsreader;src:url('${staticFile('assets/newsreader.woff2')}') format('woff2');font-weight:200 800;font-style:normal;} @font-face {font-family:DMSans;src:url('${staticFile('assets/dm-sans.woff2')}') format('woff2');font-weight:200 900;font-style:normal;}`;
 
 function drawGull(ctx: CanvasRenderingContext2D, frame: number) {
@@ -71,6 +71,14 @@ const CoastCanvas: React.FC = () => {
       ctx.drawImage(painting, cropX + 4 + drift, y, W - 8, 3, 4, y, W - 8, 3);
     }
     ctx.restore();
+    // Keep the supplied dark-green treatment under the individual water highlights.
+    const shade = ctx.createLinearGradient(0, 0, W, 0);
+    shade.addColorStop(0, '#121a16');
+    shade.addColorStop(0.46, 'rgba(18,26,22,0.94)');
+    shade.addColorStop(0.74, 'rgba(18,26,22,0.5)');
+    shade.addColorStop(1, 'rgba(18,26,22,0.14)');
+    ctx.fillStyle = shade;
+    ctx.fillRect(0, 0, W, H);
     // Soft, independently shifting reflections, placed in the painted water channels.
     const glints: [number, number, number][] = [
       [26, 247, 58], [165, 252, 79], [345, 251, 54], [72, 264, 48],
@@ -82,8 +90,8 @@ const CoastCanvas: React.FC = () => {
     ctx.lineCap = 'round';
     glints.forEach(([x, y, length], i) => {
       const shift = Math.sin(time + i * 1.71) * (5 + (i % 3) * 2);
-      const glimmer = 0.14 + 0.09 * Math.sin(time * 2 + i * 1.23);
-      ctx.globalAlpha = glimmer;
+      const glimmer = 0.18 + 0.10 * Math.sin(time * 2 + i * 1.23);
+      ctx.globalAlpha = glimmer * Math.max(0, Math.min(1, (x - 360) / 440));
       ctx.strokeStyle = '#f3f2e9';
       ctx.lineWidth = i % 3 === 0 ? 1.4 : 1;
       ctx.beginPath();
@@ -110,9 +118,9 @@ export const Coast: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: '#e9e9df', overflow: 'hidden' }}>
       <style>{fonts}</style>
       <CoastCanvas />
-      <div style={{ position: 'absolute', left: 58, top: 62, fontFamily: 'Newsreader, Georgia, serif', color: ink, fontSize: 76, fontWeight: 400, lineHeight: 1, letterSpacing: '-0.035em', whiteSpace: 'nowrap' }}>Melvin Friedrichsen</div>
+      <div style={{ position: 'absolute', left: 58, top: 54, fontFamily: 'Newsreader, Georgia, serif', color: ink, fontSize: 104, fontWeight: 400, lineHeight: 1, letterSpacing: '-0.035em', whiteSpace: 'nowrap' }}>Melvin</div>
       <Sequence from={60} durationInFrames={320}>
-        <div style={{ position: 'absolute', left: 10, top: 151, width: 285, height: 46, opacity }}>
+        <div style={{ position: 'absolute', left: 10, top: 174, width: 285, height: 46, opacity }}>
           <TextReveal text="Building with AI" fontFamily="DMSans, sans-serif" color={ink} fontSize={28} fontWeight={500} initialScale={1} pushScale={1} introDuration={18} holdDuration={12} recedeDuration={36} assembleDuration={70} wordDelay={0} wordStagger={12} wordDuration={36} wordPush={0.18} wordFade={18} letterSpacing="-0.01em" />
         </div>
       </Sequence>

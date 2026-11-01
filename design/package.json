@@ -1,0 +1,7 @@
+{
+  "name": "profile-project-cards",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {"render": "node render-project-cards.mjs"},
+  "devDependencies": {"playwright": "1.62.1"}
+}

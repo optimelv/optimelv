@@ -1,5 +1,6 @@
 .tooling/
 artifacts/
 motion/node_modules/
+design/node_modules/
 motion/out/
 .DS_Store
