@@ -1,11 +1,10 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { AbsoluteFill, Sequence, cancelRender, continueRender, delayRender, interpolate, staticFile, useCurrentFrame } from 'remotion';
-import { TextReveal } from '../vendor/snapcn/TextReveal';
-import { FPS, H, TOTAL, W } from './timeline';
+import { AbsoluteFill, cancelRender, continueRender, delayRender, staticFile, useCurrentFrame } from 'remotion';
+import { H, TOTAL, W } from './timeline';
 
 // cinetic:brand-supplied warm ivory, North Sea greens and Newsreader from the portfolio.
 const ink = '#eef1e8';
-const fonts = `@font-face {font-family:Newsreader;src:url('${staticFile('assets/newsreader.woff2')}') format('woff2');font-weight:200 800;font-style:normal;} @font-face {font-family:DMSans;src:url('${staticFile('assets/dm-sans.woff2')}') format('woff2');font-weight:200 900;font-style:normal;}`;
+const fonts = `@font-face {font-family:Newsreader;src:url('${staticFile('assets/newsreader.woff2')}') format('woff2');font-weight:200 800;font-style:normal;}`;
 
 function drawGull(ctx: CanvasRenderingContext2D, frame: number) {
   const phase = frame / TOTAL * Math.PI * 2;
@@ -106,25 +105,17 @@ const CoastCanvas: React.FC = () => {
 };
 
 export const Coast: React.FC = () => {
-  const frame = useCurrentFrame();
   const [fontHandle] = useState(() => delayRender('Loading brand fonts'));
   useEffect(() => {
-    Promise.all([document.fonts.load('400 16px Newsreader'), document.fonts.load('400 16px DMSans')])
+    Promise.all([document.fonts.load('400 16px Newsreader')])
       .then(() => continueRender(fontHandle))
       .catch((error: Error) => cancelRender(error));
   }, [fontHandle]);
-  const opacity = interpolate(frame, [58, 78, 345, 375], [0, 1, 1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
   return (
     <AbsoluteFill style={{ backgroundColor: '#e9e9df', overflow: 'hidden' }}>
       <style>{fonts}</style>
       <CoastCanvas />
       <div style={{ position: 'absolute', left: 58, top: 54, fontFamily: 'Newsreader, Georgia, serif', color: ink, fontSize: 104, fontWeight: 400, lineHeight: 1, letterSpacing: '-0.035em', whiteSpace: 'nowrap' }}>Melvin</div>
-      <Sequence from={60} durationInFrames={320}>
-        <div style={{ position: 'absolute', left: 10, top: 174, width: 285, height: 46, opacity }}>
-          <TextReveal text="Building with AI" fontFamily="DMSans, sans-serif" color={ink} fontSize={28} fontWeight={500} initialScale={1} pushScale={1} introDuration={18} holdDuration={12} recedeDuration={36} assembleDuration={70} wordDelay={0} wordStagger={12} wordDuration={36} wordPush={0.18} wordFade={18} letterSpacing="-0.01em" />
-        </div>
-      </Sequence>
-      <span style={{ display: 'none' }}>{FPS}</span>
     </AbsoluteFill>
   );
 };
