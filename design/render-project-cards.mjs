@@ -39,7 +39,7 @@ try {
     </style></head><body><div class="card"><div class="words"><h1>${c.title}</h1><p>${c.desc}</p>${c.status?`<div class="status">${c.status}</div>`:''}</div><div class="image"><img src="data:${mime};base64,${data}"></div></div></body></html>`;
     await page.setViewportSize({width:1200,height:450});
     await page.setContent(html,{waitUntil:'load'}); await page.evaluate(()=>document.fonts.ready);
-    await page.locator('.card').screenshot({path:resolve(root,'assets/projects',c.id+'-retina-v3.png')});
+    await page.locator('.card').screenshot({path:resolve(root,'assets/projects',c.id+(c.id==='relay'?'-retina-v4.png':'-retina-v3.png'))});
     const mobileCss = `<style>
       .card{width:800px;height:${c.mobileSource ? 900 : 700}px;flex-direction:column}
       .words{width:800px;height:260px;flex:none;padding:24px 48px 16px}
@@ -52,7 +52,7 @@ try {
     const mobileHtml = html.replace(data, mobileData).replace(`<h1>${c.title}</h1>`, `<h1>${c.title.replaceAll('<br>', ' ')}</h1>`).replace('</head>', mobileCss + '</head>');
     await page.setViewportSize({width:800,height:700});
     await page.setContent(mobileHtml,{waitUntil:'load'}); await page.evaluate(()=>document.fonts.ready);
-    await page.locator('.card').screenshot({path:resolve(root,'assets/projects',c.id+'-mobile-retina-v3.png')});
+    await page.locator('.card').screenshot({path:resolve(root,'assets/projects',c.id+(c.id==='relay'?'-mobile-retina-v4.png':'-mobile-retina-v3.png'))});
     console.log(c.id);
   }
 } finally {await browser.close();}

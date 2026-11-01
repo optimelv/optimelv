@@ -12,7 +12,7 @@ Margin and Relay are in development. Their cards open illustrated, animated prev
 
 <a href="https://github.com/mferuscomelo/procura-iq"><picture><source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/optimelv/optimelv/main/assets/projects/procuraiq-mobile-v2.png" /><img src="assets/projects/procuraiq-v2.png" alt="ProcuraIQ: ingredient analysis and supplier comparisons. Pitch artwork by Spherecast." width="100%" /></picture></a>
 <a href="https://melvin.ai.studio/in-the-works#margin"><picture><source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/optimelv/optimelv/main/assets/projects/margin-mobile-retina-v3.png" /><img src="assets/projects/margin-retina-v3.png" alt="Margin: illustrated product preview. In development. Open the animated demo." width="100%" /></picture></a>
-<a href="https://melvin.ai.studio/in-the-works#relay"><picture><source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/optimelv/optimelv/main/assets/projects/relay-mobile-retina-v3.png" /><img src="assets/projects/relay-retina-v3.png" alt="Relay: illustrated product preview. In development. Open the animated demo." width="100%" /></picture></a>
+<a href="https://melvin.ai.studio/in-the-works#relay"><picture><source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/optimelv/optimelv/main/assets/projects/relay-mobile-retina-v4.png" /><img src="assets/projects/relay-retina-v4.png" alt="Relay: illustrated product preview. In development. Open the animated demo." width="100%" /></picture></a>
 
 ## More projects
 
