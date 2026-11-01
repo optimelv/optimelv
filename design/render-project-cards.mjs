@@ -14,12 +14,12 @@ const cards = [
   {id:'fjord-fleet', title:'Fjord Fleet<br>Pricing', desc:'A university analytics<br>case on fleet pricing.', source:'fjord.png', fit:'contain', bg:'#ffffff'},
   {id:'strikesignal', title:'StrikeSignal', desc:'Counter-Strike predictions<br>and analysis.', status:'Unfinished. On hold.', source:'strikesignal.jpg', pos:'left top'},
   {id:'personal-website', title:'Personal<br>website', desc:'More about my background,<br>interests and work.', source:'personal-gull.png', fit:'contain', bg:'#121a16'},
-  {id:'margin', title:'Margin', desc:'A workspace for CVs,<br>cover letters and applications.', status:'In development.', source:'margin.png', fit:'contain', bg:'#efe9d9'},
-  {id:'relay', title:'Relay', desc:'Skills and integrations<br>for AI tools.', status:'In development.', source:'relay.png', fit:'contain', bg:'#000000'},
+  {id:'margin', title:'Margin', desc:'A workspace for CVs,<br>cover letters and applications.', status:'In development.', source:'margin-sharp.png', mobileSource:'margin-compact-sharp.png', fit:'contain', bg:'#efe9d9'},
+  {id:'relay', title:'Relay', desc:'Skills and integrations<br>for AI tools.', status:'In development.', source:'relay-sharp.png', mobileSource:'relay-compact-sharp.png', fit:'contain', bg:'#000000'},
 ];
 const browser = await chromium.launch({headless:true});
 try {
-  const page = await browser.newPage({viewport:{width:1200,height:450},deviceScaleFactor:1});
+  const page = await browser.newPage({viewport:{width:1200,height:450},deviceScaleFactor:2});
   await mkdir(resolve(root,'assets/projects'),{recursive:true});
   for (const c of cards.filter((card) => !process.argv[2] || card.id === process.argv[2])) {
     const bytes = await readFile(resolve(here,'source',c.source));
@@ -39,19 +39,20 @@ try {
     </style></head><body><div class="card"><div class="words"><h1>${c.title}</h1><p>${c.desc}</p>${c.status?`<div class="status">${c.status}</div>`:''}</div><div class="image"><img src="data:${mime};base64,${data}"></div></div></body></html>`;
     await page.setViewportSize({width:1200,height:450});
     await page.setContent(html,{waitUntil:'load'}); await page.evaluate(()=>document.fonts.ready);
-    await page.locator('.card').screenshot({path:resolve(root,'assets/projects',c.id+'.png')});
+    await page.locator('.card').screenshot({path:resolve(root,'assets/projects',c.id+'-retina-v3.png')});
     const mobileCss = `<style>
-      .card{width:800px;height:700px;flex-direction:column}
+      .card{width:800px;height:${c.mobileSource ? 900 : 700}px;flex-direction:column}
       .words{width:800px;height:260px;flex:none;padding:24px 48px 16px}
       h1{font-size:72px;line-height:1;margin-bottom:15px}
       p{font-size:34px;line-height:1.2}
       .status{font-size:28px;margin-top:10px}
-      .image{flex:none;width:736px;height:408px;margin:0 32px 32px}
+      .image{flex:none;width:736px;height:${c.mobileSource ? 608 : 408}px;margin:0 32px 32px}
     </style>`;
-    const mobileHtml = html.replace(`<h1>${c.title}</h1>`, `<h1>${c.title.replaceAll('<br>', ' ')}</h1>`).replace('</head>', mobileCss + '</head>');
+    const mobileData = c.mobileSource ? (await readFile(resolve(here,'source',c.mobileSource))).toString('base64') : data;
+    const mobileHtml = html.replace(data, mobileData).replace(`<h1>${c.title}</h1>`, `<h1>${c.title.replaceAll('<br>', ' ')}</h1>`).replace('</head>', mobileCss + '</head>');
     await page.setViewportSize({width:800,height:700});
     await page.setContent(mobileHtml,{waitUntil:'load'}); await page.evaluate(()=>document.fonts.ready);
-    await page.locator('.card').screenshot({path:resolve(root,'assets/projects',c.id+'-mobile.png')});
+    await page.locator('.card').screenshot({path:resolve(root,'assets/projects',c.id+'-mobile-retina-v3.png')});
     console.log(c.id);
   }
 } finally {await browser.close();}
