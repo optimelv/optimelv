@@ -25,12 +25,14 @@ More about my background, interests and work.
 
 ## In the works
 
-Two projects in development. The images below link to animated, illustrated previews.
-
-<a href="https://melvin.ai.studio/in-the-works#margin"><img src="assets/margin-preview.png" alt="Illustrated preview of Margin's CV editor" width="49%" /></a> <a href="https://melvin.ai.studio/in-the-works#relay"><img src="assets/relay-preview.png" alt="Illustrated preview of Relay's skill discovery" width="49%" /></a>
+Two projects in development. The images link to animated, illustrated previews.
 
 [**Margin**](https://melvin.ai.studio/in-the-works#margin)  
 A workspace for CVs, cover letters and application documents.
 
+<a href="https://melvin.ai.studio/in-the-works#margin"><img src="assets/margin-preview.png" alt="Illustrated preview of Margin's CV editor" width="100%" /></a>
+
 [**Relay**](https://melvin.ai.studio/in-the-works#relay)  
 A desktop hub for managing skills and integrations across AI tools.
+
+<a href="https://melvin.ai.studio/in-the-works#relay"><img src="assets/relay-preview.png" alt="Illustrated preview of Relay's skill discovery" width="100%" /></a>
