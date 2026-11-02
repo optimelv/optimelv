@@ -12,7 +12,7 @@ const cards = [
   {id:'procuraiq', title:'ProcuraIQ', desc:'Ingredient analysis<br>and supplier comparisons.', source:'procuraiq-pitch.png', fit:'contain', bg:'#000000'},
   {id:'contextual-writing', title:'Contextual<br>Writing', desc:'Writing workflows for<br>Claude and Codex.', source:'contextual-sharp.png', pos:'left center'},
   {id:'fjord-fleet', title:'Fjord Fleet<br>Pricing', desc:'A university analytics<br>case on fleet pricing.', source:'fjord-sharp.png', fit:'contain', bg:'#ffffff'},
-  {id:'strikesignal', title:'StrikeSignal', desc:'Counter-Strike predictions<br>and analysis.', status:'Unfinished. On hold.', source:'strikesignal-lossless.png', pos:'left top'},
+  {id:'strikesignal', title:'StrikeSignal', desc:'Counter-Strike predictions<br>and analysis.', status:'Unfinished. On hold.', source:'strikesignal-2026-11-02.png', pos:'left top'},
   {id:'personal-website', title:'Personal<br>website', desc:'More about my background,<br>interests and work.', source:'personal-gull-sharp.png', fit:'contain', bg:'#121a16'},
   {id:'margin', title:'Margin', desc:'A workspace for CVs,<br>cover letters and applications.', status:'In development.', source:'margin-sharp.png', mobileSource:'margin-compact-sharp.png', fit:'contain', bg:'#efe9d9'},
   {id:'relay', title:'Relay', desc:'Skills and integrations<br>for AI tools.', status:'In development.', source:'relay-sharp.png', mobileSource:'relay-compact-sharp.png', fit:'contain', bg:'#000000'},
@@ -39,7 +39,7 @@ try {
     </style></head><body><div class="card"><div class="words"><h1>${c.title}</h1><p>${c.desc}</p>${c.status?`<div class="status">${c.status}</div>`:''}</div><div class="image"><img src="data:${mime};base64,${data}"></div></div></body></html>`;
     await page.setViewportSize({width:1200,height:450});
     await page.setContent(html,{waitUntil:'load'}); await page.evaluate(()=>document.fonts.ready);
-    await page.locator('.card').screenshot({path:resolve(root,'assets/projects',c.id+(c.id==='relay'?'-retina-v4.png':'-retina-v3.png'))});
+    await page.locator('.card').screenshot({path:resolve(root,'assets/projects',c.id+(['relay','strikesignal'].includes(c.id)?'-retina-v4.png':'-retina-v3.png'))});
     const mobileCss = `<style>
       .card{width:800px;height:${c.mobileSource ? 900 : 700}px;flex-direction:column}
       .words{width:800px;height:260px;flex:none;padding:24px 48px 16px}
@@ -52,7 +52,7 @@ try {
     const mobileHtml = html.replace(data, mobileData).replace(`<h1>${c.title}</h1>`, `<h1>${c.title.replaceAll('<br>', ' ')}</h1>`).replace('</head>', mobileCss + '</head>');
     await page.setViewportSize({width:800,height:700});
     await page.setContent(mobileHtml,{waitUntil:'load'}); await page.evaluate(()=>document.fonts.ready);
-    await page.locator('.card').screenshot({path:resolve(root,'assets/projects',c.id+(c.id==='relay'?'-mobile-retina-v4.png':'-mobile-retina-v3.png'))});
+    await page.locator('.card').screenshot({path:resolve(root,'assets/projects',c.id+(['relay','strikesignal'].includes(c.id)?'-mobile-retina-v4.png':'-mobile-retina-v3.png'))});
     console.log(c.id);
   }
 } finally {await browser.close();}
